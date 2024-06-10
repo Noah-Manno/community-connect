@@ -5,15 +5,15 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector("#email-signup").value.trim();
   const username = document.querySelector("#username-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
-  const company_key = document.querySelector("#company-signup").value.trim();
+  const companyKey = document.querySelector("#company-signup").value.trim();
 
   // Check if all required fields are provided
-  if (email && username && password && company_key) {
+  if (email && username && password && companyKey) {
     try {
       // Send a POST request to the server with the signup data
       const response = await fetch("/api/users/", {
         method: "POST",
-        body: JSON.stringify({ email, username, password, company_key }),
+        body: JSON.stringify({ email, username, password, companyKey }),
         headers: { "Content-Type": "application/json" },
       });
 
